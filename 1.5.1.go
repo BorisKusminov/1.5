@@ -14,5 +14,5 @@ func main() {
 		println("Ошибка ввода", err)
 		return
 	}
-	fmt.Println("Количество введенных символов:", len(string(input)))
+	fmt.Println("Количество введенных символов:", len(string(input))-1)
 }
