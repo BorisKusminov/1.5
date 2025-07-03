@@ -1,15 +1,26 @@
 package main
 
-import "fmt"
-
+import ("bufio" 
+"fmt"
+	"os"
+	"strings"
+	"unicode")
+	const bukvi string= "яеёиоуыэюя"
 func main() {
-	fmt.Println("Введите текст:")
-	var a string
-	fmt.Scanln(&a)
-	for i := 0; i < len(a); i++ {
-		if a[i] == 'а' || a[i] == 'е' || a[i] == 'ё' || a[i] == 'и' || a[i] == 'о' || a[i] == 'у' ||
-			a[i] == 'ы' || a[i] == 'э' || a[i] == 'ю' || a[i] == 'я' {
-			fmt.Println("Количество согласных:", i)
-		}
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Введите строку: ")
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		println("Ошибка ввода", err)
+		return
 	}
-}
+	schetchik :=0
+	for _, char := range input {
+		lowerChar := unicode.ToLower(char)
+		if strings.ContainsRune((bukvi, lolowerChar)){
+				schetchik++
+						}
+		}
+			fmt.Println("Количество согласных:", schetchik)
+	}
+

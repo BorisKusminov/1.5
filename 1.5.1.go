@@ -11,7 +11,7 @@ func main() {
 	fmt.Print("Введите строку: ")
 	input, err := reader.ReadString('\n')
 	if err != nil {
-		println("Ошибка ввода", err)
+		fmt.Println("Ошибка ввода", err)
 		return
 	}
 	fmt.Println("Количество введенных символов:", len(string(input))-1)
